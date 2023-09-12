@@ -24,7 +24,7 @@ document.writeln("<br>");
 document.writeln(a += b);
 document.writeln("<br>");
 document.writeln(a += b);
-*/
+
 document.writeln("<button onclick='condition()'>Conditional Test</button>")
 function condition()
 {
@@ -37,4 +37,10 @@ function condition()
   {
     document.writeln("You chose Cancel!");
   }
+}
+*/
+arr = ["Mael","Eric","Randall","James"];
+for (var i=0; i < arr.length; i++)
+{
+  document.writeln(arr[i],"<br>");
 }
