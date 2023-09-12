@@ -38,9 +38,21 @@ function condition()
     document.writeln("You chose Cancel!");
   }
 }
-*/
+
 arr = ["Mael","Eric","Randall","James"];
 for (var i=0; i < arr.length; i++)
 {
   document.writeln(arr[i],"<br>");
+}
+*/
+// Prompt the user for their name
+const userName = prompt("Please enter your name:", "");
+
+// Check if they entered a value
+if (userName) {
+    // Insert the user's name into the header
+    document.getElementById('userName').textContent = userName;
+} else {
+    // If they didn't enter a name, use a default value
+    document.getElementById('userName').textContent = "guest";
 }
