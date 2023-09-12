@@ -6,3 +6,12 @@ window.alert('5 + 6');
 //show up windows alert 5+6
 document.write('<h1>A heading</h1>');
 document.write('<p>A sentence.</p>');
+//show the content in the corresponding format as h1 and p
+const x = "web";
+const y = "mapping";
+const out = x + y;
+document.write(out);
+//show webmapping below
+// A prompt box is used to prompt users to input a value before entering a page.
+user_name = window.prompt("Please enter your name", "Type your name here");
+document.write(user_name);
