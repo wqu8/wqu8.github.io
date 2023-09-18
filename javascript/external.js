@@ -96,3 +96,23 @@ function webmap_table() {
   document.write("</table>");
   return "";
 }
+
+function calculateArea() {
+  var length = document.getElementById("length").value;
+  var width = document.getElementById("width").value;
+  var area = length * width;
+  document.getElementById("result").innerText = area;
+}
+/*
+function calculateArea() {
+  var length = parseFloat(prompt("Input length of the rectangle:"));
+  var width = parseFloat(prompt("Input width of the rectangle:"));
+
+  if (isNaN(length) || isNaN(width)) {
+    alert("Please enter valid numbers for both length and width.");
+    return;
+  }
+
+  var area = length * width;
+  document.getElementById("result").innerText = area;
+}*/

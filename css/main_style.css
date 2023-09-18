@@ -63,3 +63,19 @@ h1 {
   position: relative;
   margin-bottom: 50px; /*avoid overlapping with copyright*/
 }
+#area-calculator-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#area-form {
+  flex: 1;
+  text-align: left;
+}
+
+#area-calculator {
+  flex: 1;
+  text-align: right;
+}
