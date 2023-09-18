@@ -5,6 +5,7 @@
   <!-- All Styling for this HTML document are contained in this external css
   file -->
   <link rel="stylesheet" type="text/css" href="css/main_style.css">
+  <script src="javascript/external.js"></script>
 </head>
 <body>
   <div id="body-container">
@@ -27,7 +28,9 @@
     <div id="research-interests">
       <p>
         <h3>Research Interests:</h3>
-        <script src="javascript/external.js"></script>
+        <script>
+        document.write(welcome());
+        </script>
         <ol>
           <li>Remote Sensing</li>
           <li>Machine Learning</li>
