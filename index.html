@@ -5,16 +5,17 @@
   <!-- All Styling for this HTML document are contained in this external css
   file -->
   <link rel="stylesheet" type="text/css" href="css/main_style.css">
-  <script src="javascript/external.js"></script>
+
 </head>
 <body>
   <div id="body-container">
     <div id="header">
-      <h1>Hello, my name is Pingping Wang!</h1>
+      <script src="javascript/external.js"></script>
+      <!-- <h1>Hello, my name is Pingping Wang!</h1> -->
       <!-- <h1 id="welcomeHeader">Hello, welcome <span id="userName"></span>!</h1> -->
     </div>
     <div id="profile-picture">
-      <img src=images/Max.jpg width=500px height=600px />
+      <img src=images/Max.jpg width=250px height=300px />
       <p>This is my cat. His name is Max.</p>
     </div>
     <div id="welcome-text">
@@ -26,17 +27,22 @@
       </p>
     </div>
     <div id="research-interests">
-      <p>
-        <h3>Research Interests:</h3>
+        <p>
+          <h3>Research Interests:</h3>
+          <ol>
+            <li>Remote Sensing</li>
+            <li>Machine Learning</li>
+            <li>Social Media Geography</li>
+          </ol>
+        </p>
+      </div>
+      <div id="webmap-reviews">
+        <p>
+          <h3>Webmap Reviews</h3>
         <script>
-        document.write(welcome());
+        document.write(webmap_table());
         </script>
-        <ol>
-          <li>Remote Sensing</li>
-          <li>Machine Learning</li>
-          <li>Social Media Geography</li>
-        </ol>
-      </p>
+      </div>
     </div>
   </div>
   <div id="copyright">
