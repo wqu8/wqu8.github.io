@@ -1,0 +1,89 @@
+<!DOCTYPE html> <!-- Declares the document to be HTML5 -->
+<html> <!-- Beginning of the HTML document -->
+
+<head> <!-- Beginning of the head section which contains meta information and other resources for the page -->
+    <meta charset="utf-8" /> <!-- Specifies the character encoding for the document, which is UTF-8 -->
+    <meta
+        name="viewport"
+        content="initial-scale=1, maximum-scale=1, user-scalable=no"/> <!-- Sets the viewport properties for responsive design. It sets the initial zoom level, maximum zoom level, and disables user zooming -->
+    <title> Dynamic Layers </title> <!-- Sets the title of the web page that appears on the browser tab -->
+
+    <!-- Link to the ArcGIS API for JavaScript stylesheet for the light theme -->
+    <link rel="stylesheet"
+          href="https://js.arcgis.com/4.21/esri/themes/light/main.css"/>
+
+    <!-- Script source for the ArcGIS API for JavaScript -->
+    <script src="https://js.arcgis.com/4.21/"> </script>
+
+    <!-- Internal CSS to style the HTML elements -->
+    <style>
+        html, body, #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;}
+    </style>
+    <!-- Removes padding -->
+    <!-- Removes margin -->
+    <!-- Sets height to 100% of the viewport -->
+    <!-- Sets width to 100% of the viewport -->
+
+    <!-- JavaScript code to initialize and display the map -->
+    <script>
+        // Using the require function from the ArcGIS API to load modules
+        require(["esri/Map", "esri/views/MapView", "esri/layers/TileLayer", "esri/layers/MapImageLayer"], function (Map, MapView, TileLayer, MapImageLayer) {
+
+            // Renderer for the cities
+            var CitiesRenderer = { type: "simple",
+            symbol: {
+              type: "simple-marker",
+              size: 3,
+              color: "yellow",
+              style: "circle",
+              outline:{
+                 width: 1,
+                 color: "yellow"
+              }
+            },
+            label: "Cities"
+          };
+          // MapImageLayer for cities
+          var CitiesLayer = new MapImageLayer({
+            url:"https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer",
+            sublayers: [
+              {
+                id: 0,
+                renderer: CitiesRenderer,
+                opacity: 0.4
+              }
+            ]
+          });
+
+          // Create a tile layer cached map service for world transportation for quick display
+            var TransportationLayer = new TileLayer({
+                url: "https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer"
+            });
+
+          // Create a map with the oceans basemap and add the transportation layer
+          var map = new Map({
+              basemap: "oceans",
+              layers: [TransportationLayer, CitiesLayer]
+          });
+
+          // create map view with specified zoom level and center
+          var view = new MapView({
+              container: "viewDiv", // Specifies the container element's ID
+              map: map,             // Specifies the map object to use
+              zoom: 10,              // Initial zoom level
+              center: [-118.2095, 34.0866] // Initial center coordinates (longitude, latitude)
+          });
+
+        });
+    </script>
+</head> <!-- End of the head section -->
+
+<body> <!-- Beginning of the body section which contains the content of the page -->
+    <div id="viewDiv"></div> <!-- A div container where the map will be rendered -->
+</body> <!-- End of the body section -->
+
+</html> <!-- End of the HTML document -->
